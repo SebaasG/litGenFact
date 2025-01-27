@@ -1,0 +1,125 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Arroz 1kg",
+      "value": 2200,
+      "stock": 50
+    },
+    {
+      "id": "2",
+      "name": "Azúcar 1kg",
+      "value": 3000,
+      "stock": 40
+    },
+    {
+      "id": "3",
+      "name": "Harina 1kg",
+      "value": 2500,
+      "stock": 35
+    },
+    {
+      "id": "4",
+      "name": "Aceite 1L",
+      "value": 6000,
+      "stock": 30
+    },
+    {
+      "id": "5",
+      "name": "Lentejas 500g",
+      "value": 3500,
+      "stock": 20
+    },
+    {
+      "id": "6",
+      "name": "Pasta de dientes 100g",
+      "value": 3500,
+      "stock": 25
+    },
+    {
+      "id": "7",
+      "name": "Jabón de baño 125g",
+      "value": 1200,
+      "stock": 60
+    },
+    {
+      "id": "8",
+      "name": "Toallas higiénicas (pack 10)",
+      "value": 4800,
+      "stock": 15
+    },
+    {
+      "id": "9",
+      "name": "Leche 1L",
+      "value": 2800,
+      "stock": 50
+    },
+    {
+      "id": "10",
+      "name": "Pan de molde 500g",
+      "value": 3500,
+      "stock": 40
+    },
+    {
+      "id": "11",
+      "name": "Jugo de naranja 1L",
+      "value": 5500,
+      "stock": 30
+    },
+    {
+      "id": "12",
+      "name": "Té Lipton 20 bolsitas",
+      "value": 4000,
+      "stock": 25
+    },
+    {
+      "id": "13",
+      "name": "Galletas María 400g",
+      "value": 2500,
+      "stock": 40
+    },
+    {
+      "id": "14",
+      "name": "Cereal Cornflakes 500g",
+      "value": 7500,
+      "stock": 10
+    },
+    {
+      "id": "15",
+      "name": "Atún en conserva 170g",
+      "value": 5000,
+      "stock": 20
+    },
+    {
+      "id": "16",
+      "name": "Mantequilla 500g",
+      "value": 7500,
+      "stock": 15
+    },
+    {
+      "id": "17",
+      "name": "Tomates 1kg",
+      "value": 4000,
+      "stock": 30
+    },
+    {
+      "id": "18",
+      "name": "Cebollas 1kg",
+      "value": 3500,
+      "stock": 20
+    },
+    {
+      "id": "19",
+      "name": "Papaya 1kg",
+      "value": 4500,
+      "stock": 25
+    },
+    {
+      "id": "20",
+      "name": "Papas 1kg",
+      "value": 2500,
+      "stock": 40
+    }
+  ],
+  "invoices": []
+}
