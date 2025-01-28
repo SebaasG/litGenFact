@@ -1,4 +1,3 @@
-// Función para llenar la tabla con los datos del usuario o actualizar filas existentes
 export function setTable(tableComponent, tableData) {
     const tbody = tableComponent.shadowRoot.querySelector("tbody");
   
@@ -9,7 +8,6 @@ export function setTable(tableComponent, tableData) {
     });
   
     if (existingRow) {
-      // Si ya existe el producto, actualizamos la cantidad y el subtotal
       const amountCell = existingRow.querySelector("td:nth-child(4)");
       const subTotalCell = existingRow.querySelector("td:nth-child(5)");
   
@@ -19,22 +17,20 @@ export function setTable(tableComponent, tableData) {
       amountCell.textContent = newAmount;
       subTotalCell.textContent = (
         parseInt(newAmount) * parseInt(tableData.value)
-      ).toFixed(2); // Actualizamos el subtotal
+      ).toFixed(2);
     } else {
-      // Si no existe el producto, creamos una nueva fila en la tabla
       const subTotal = tableData.value * tableData.amount;
       const tableRow = document.createElement("tr");
       tableRow.innerHTML = `
-        <td>${tableData.codeProd}</td>
-        <td>${tableData.nameProd}</td>
-        <td>${tableData.value}</td>
-        <td>${tableData.amount}</td>
-        <td>${subTotal.toFixed(2)}</td>
-        <td><button class="btn btn-danger btnDelete">X</button></td>
-      `;
+          <td>${tableData.codeProd}</td>
+          <td>${tableData.nameProd}</td>
+          <td>${tableData.value}</td>
+          <td>${tableData.amount}</td>
+          <td>${subTotal.toFixed(2)}</td>
+          <td><button class="btn btn-danger btnDelete">X</button></td>
+        `;
       tbody.appendChild(tableRow);
   
-      // Añadimos el evento para eliminar la fila
       const btnDelete = tableRow.querySelector(".btnDelete");
       btnDelete.addEventListener("click", () => {
         tableRow.remove();

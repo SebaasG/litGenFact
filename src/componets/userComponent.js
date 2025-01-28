@@ -53,13 +53,6 @@ export class UserComponent extends LitElement {
     `;
   }
 
-  firstUpdated() {
-    // Este método se ejecuta una vez el componente ha sido completamente renderizado.
-    this.shadowRoot.getElementById("user-form").addEventListener('submit', (e) => {
-      e.preventDefault();
-      collectUserData(this); // Llamamos a la función para recolectar los datos
-    });
-  }
 }
 
 customElements.define("user-component", UserComponent);

@@ -121,5 +121,69 @@
       "stock": 40
     }
   ],
-  "invoices": []
+  "invoices": [
+    {
+      "id": "0da2",
+      "invoiceId": "30323d76e0e",
+      "clientId": "",
+      "total": 7140,
+      "date": "2025-01-28 20:00:08"
+    },
+    {
+      "id": "50fa",
+      "invoiceId": "30323d76e0e",
+      "clientId": "",
+      "total": 7140,
+      "date": "2025-01-28 20:00:41"
+    },
+    {
+      "id": "0989",
+      "invoiceId": "30323eb465c",
+      "clientId": "",
+      "total": 2975,
+      "date": "2025-01-28 20:15:45"
+    },
+    {
+      "id": "9c5a",
+      "invoiceId": "30323ee46d1",
+      "clientId": "",
+      "total": 4165,
+      "date": "2025-01-28 20:18:19"
+    },
+    {
+      "id": "79e7",
+      "invoiceId": "30323ee46d1",
+      "clientId": "21313",
+      "total": 7140,
+      "date": "2025-01-28 20:18:47"
+    },
+    {
+      "id": "462a",
+      "invoiceId": "303240b0869",
+      "clientId": "",
+      "total": 0,
+      "date": "2025-01-28 20:28:14"
+    },
+    {
+      "id": "3da4",
+      "invoiceId": "30324107ac9",
+      "clientId": "",
+      "total": 3570,
+      "date": "2025-01-28 20:31:58"
+    },
+    {
+      "id": "ee6c",
+      "invoiceId": "303241592ab",
+      "clientId": "",
+      "total": 2975,
+      "date": "2025-01-28 20:36:19"
+    },
+    {
+      "id": "3991",
+      "invoiceId": "303241592ab",
+      "clientId": "1052382113",
+      "total": 12495,
+      "date": "2025-01-28 20:39:39"
+    }
+  ]
 }

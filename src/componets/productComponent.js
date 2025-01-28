@@ -1,19 +1,21 @@
 import { LitElement, html, css } from 'lit';
-import { loadProducts, loadCode } from "../controllers/productController.js"; // Importa las funciones del controlador
+import { loadProducts, loadCode } from "../controllers/productController.js"; // Importar las funciones del controlador
+import { collectUserData } from "../controllers/userController.js"; // Importar la función collectUserData
 
 class ProductComponent extends LitElement {
-  constructor() {
-    super();
-    this.products = []; // Lista de productos
-    this.selectedProduct = null; // Producto seleccionado
-  }
-
   static styles = css`
     :host {
       display: block;
     }
   `;
 
+  constructor() {
+    super();
+    this.products = []; 
+    this.selectedProduct = null; 
+  }
+
+  // Método que renderiza la plantilla HTML
   render() {
     return html`
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
@@ -34,7 +36,7 @@ class ProductComponent extends LitElement {
         <div class="d-flex gap-3">
           <div class="flex-grow-1">
             <label for="unitValue" class="form-label">Unit Value</label>
-            <input type="text" class="form-control" .value="${this.selectedProduct ? this.selectedProduct.value : ''}" disabled>
+            <input type="text" class="form-control" disabled id = "unitValue">
           </div>
           <div class="flex-grow-1">
             <label for="amountProd" class="form-label">Amount</label>
@@ -43,30 +45,29 @@ class ProductComponent extends LitElement {
         </div>
 
         <div class="d-flex justify-content-center"> 
-          <button type="submit" id="submitBtn" class="btn btn-primary mx-auto mt-3">Submit</button>
+          <button type="submit" id="submitBtn" class="btn btn-primary mx-auto mt-3" @click="${this._onSubmit}">Submit</button>
         </div>
       </form>
     `;
   }
 
+
   connectedCallback() {
     super.connectedCallback();
-    loadProducts(this); // Carga los productos al montar el componente
+
+    loadProducts(this);
   }
 
-  _onProductChange() {
-    loadCode(this); // Actualiza los valores del código cuando se selecciona un producto
+
+  _onProductChange(event) {
+    loadCode(this);
   }
 
-  updateProducts(products) {
-    this.products = products;
-    this.requestUpdate();
-  }
-
-  updateSelectedProduct(product) {
-    this.selectedProduct = product;
-    this.requestUpdate();
+  _onSubmit(event) {
+    event.preventDefault();
+    collectUserData(this);
   }
 }
 
+// Definición del nuevo componente
 customElements.define("product-component", ProductComponent);
