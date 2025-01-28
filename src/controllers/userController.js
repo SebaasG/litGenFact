@@ -1,22 +1,23 @@
-export function collectUserData(userComponent) {
-  const shadowRoot = userComponent.shadowRoot || userComponent.renderRoot;
+export function collectUserData(userComp) {
+  // Obtener datos del shadowRoot
+  const shadow = userComp.shadowRoot;
 
-  const numInvoice = shadowRoot.getElementById("invNumber").value;
-  const document = shadowRoot.getElementById("idClient").value;
-  const name = shadowRoot.getElementById("nameClient").value;
-  const lastName = shadowRoot.getElementById("lastClient").value;
-  const address = shadowRoot.getElementById("address").value;
-  const email = shadowRoot.getElementById("email").value;
+  // Asegúrate de que los elementos existen antes de acceder a ellos
+  const numInvoice = shadow.getElementById("invNumber").value;
+  const document = shadow.getElementById("idClient").value;
+  const name = shadow.getElementById("nameClient").value;
+  const lastName = shadow.getElementById("lastClient").value;
+  const address = shadow.getElementById("address").value;
+  const email = shadow.getElementById("email").value;
+  
+  // Aquí asumo que tienes los elementos selectProd, codeNumber, unitValue, amountProd
+  const nameProd = shadow.getElementById("selectProd") ? shadow.getElementById("selectProd").selectedOptions[0].text : '';
+  const codeProd = shadow.getElementById("codeNumber") ? shadow.getElementById("codeNumber").value : '';
+  const value = shadow.getElementById("unitValue") ? shadow.getElementById("unitValue").value : '';
+  const amount = shadow.getElementById("amountProd") ? shadow.getElementById("amountProd").value : '';
 
-  // Simulación de otros campos
-  const nameProd =
-    shadowRoot.getElementById("selectProd")?.selectedOptions[0]?.text || "";
-  const codeProd = shadowRoot.getElementById("codeNumber")?.value || "";
-  const value = shadowRoot.getElementById("unitValue")?.value || "";
-  const amount = shadowRoot.getElementById("amountProd")?.value || "";
-
-  // Enviar los datos a través de un CustomEvent
-  userComponent.dispatchEvent(
+  // Emitir evento personalizado con los datos
+  userComp.dispatchEvent(
     new CustomEvent("userDataSubmitted", {
       detail: {
         numInvoice,
@@ -30,8 +31,6 @@ export function collectUserData(userComponent) {
         value,
         amount,
       },
-      bubbles: true,
-      composed: true,
     })
   );
 }
